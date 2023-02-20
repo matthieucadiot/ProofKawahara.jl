@@ -67,6 +67,7 @@ If the proof of the first 3 eigencouples is achieved, the code will then try to 
  - [IntervalArithmetic](https://github.com/JuliaIntervals/IntervalArithmetic.jl)
  - [LinearAlgebra](https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/)
  - [FFTW](https://github.com/JuliaMath/FFTW.jl).
+ - [PrettyTables](https://ronisbr.github.io/PrettyTables.jl/stable/)
  
  You will need to install these packages. After that, you should be able to run the code normally.
  
