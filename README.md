@@ -68,7 +68,7 @@ If the proof of the first 3 eigencouples is achieved, the code will then try to 
 If you wish to use this code in your publication, research, teaching, or other activities, please cite it using the following BibTeX template:
 
 ```
-@software{main_proof_Kawahara.jl,
+@software{Proof_Kawahara.jl,
   author = {Matthieu Cadiot},
   title  = {Proof_Kawahara.jl},
   url    = {https://github.com/matthieucadiot/kawahara_computer_assisted_proof},
