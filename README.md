@@ -81,7 +81,7 @@ If you wish to use this code in your publication, research, teaching, or other a
 @software{Proof_Kawahara.jl,
   author = {Matthieu Cadiot},
   title  = {Proof_Kawahara.jl},
-  url    = {https://github.com/matthieucadiot/Proof_Kawahara.jl},
+  url    = {https://github.com/matthieucadiot/ProofKawahara.jl},
   year   = {2023}
 }
 ```
