@@ -20,7 +20,7 @@ Table of contents:
 
 This Julia code is a complement to the article 
 
-[1](#eq1) : "Rigorous computation of solutions of semi-linear PDEs on unbounded domains via spectral methods" (M. Cadiot, J-P. Lessard, J-C. Nave)
+[[1](#eq1)] : "Rigorous computation of solutions of semi-linear PDEs on unbounded domains via spectral methods" (M. Cadiot, J-P. Lessard, J-C. Nave)
 
 as it provides the necessary rigorous computations that are needed in Section 6.
 
