@@ -78,9 +78,9 @@ If the proof of the first 3 eigencouples is achieved, the code will then try to 
 If you wish to use this code in your publication, research, teaching, or other activities, please cite it using the following BibTeX template:
 
 ```
-@software{Proof_Kawahara.jl,
+@software{ProofKawahara.jl,
   author = {Matthieu Cadiot},
-  title  = {Proof_Kawahara.jl},
+  title  = {ProofKawahara.jl},
   url    = {https://github.com/matthieucadiot/ProofKawahara.jl},
   year   = {2023}
 }
