@@ -117,54 +117,54 @@ end
 
 
 function compute_boundary(V,N,d,a)
-S = 0.
+    S = 0.
 
-for n = 1:N
+    for n = 1:N
     
-    for m = 1:N
+        for m = 1:N
                b = 4*a*(1/(((π)/d*(n-m))^2+4*a^2) + 1/((π/d*(n+m))^2+4*a^2));
                u= V[n];
                v= V[m];
                S = S+ ((-1)^(n-m))*u*v*b;
-    end
+         end
                b = 4*a/((π/d*(n))^2+4*a^2) ;
                u= V[n];
                v= V[0];
                S = S+(((-1)^(n)))*u*v*b;
-end
+    end
 
-       for m = 1:N
-               b = 4*a/((π/d*(m))^2+4*a^2)  ;
-               u= V[0];
-               v= V[m];
-               S = S+ (((-1)^(m)))*u*v*b;
-       end
-        b =  1/(2*a) ;
-        u= V[0];
-        v= V[0];
-        S = S+ u*v*b;
+    for m = 1:N
+           b = 4*a/((π/d*(m))^2+4*a^2)  ;
+           u= V[0];
+           v= V[m];
+           S = S+ (((-1)^(m)))*u*v*b;
+    end
+    b =  1/(2*a) ;
+    u= V[0];
+    v= V[0];
+    S = S+ u*v*b;
 
-f = (sqrt(abs(S)));
+    f = (sqrt(abs(S)));
 end
 
 
 
 
 function compute_boundary_1(V,N,d,a)
-S = 0.
+    S = 0.
 
 
-for n = 1:N
-    for m = 1:N
+    for n = 1:N
+        for m = 1:N
                b = 4*a*(1/((π/d*(n-m))^2+4*a^2) - 1/((π/d*(n+m))^2+4*a^2)) ;
                u= (n)*π/d*V[n];
                v= (m)*π/d*V[m];
                S = S+ (((-1)^(n-m)))*u*v*b;
+        end
+
     end
 
-end
-
-f = (sqrt(abs(S)));
+    f = (sqrt(abs(S)));
 end
 
 
@@ -208,21 +208,21 @@ end
 function compute_boundary_eig(V,N,d,a,b,λ2,λ1,max1)
 
 
-        d0 = abs((a+b)/(4*λ2*a*b*(a^2+b^2)))
-        d1 = abs((a^3 + a^2*b + a*b^2 + b^3)/(4*λ2*a*b*(a^2+b^2)))
+    d0 = abs((a+b)/(4*λ2*a*b*(a^2+b^2)))
+    d1 = abs((a^3 + a^2*b + a*b^2 + b^3)/(4*λ2*a*b*(a^2+b^2)))
         
-        W = Sequence(CosFourier(N, π/d),V[0:N])
-        W2 = Sequence(CosFourier(2*N, π/d),(V*V)[0:2*N])
+    W = Sequence(CosFourier(N, π/d),V[0:N])
+    W2 = Sequence(CosFourier(2*N, π/d),(V*V)[0:2*N])
 
-        Cv0 = 2*compute_boundary(W,N,d,a)
-        Cv02 =  2*compute_boundary(W2,2*N,d,a)
-        Cv0d =  2*compute_boundary_1(W,N,d,a)
+    Cv0 = 2*compute_boundary(W,N,d,a)
+    Cv02 =  2*compute_boundary(W2,2*N,d,a)
+    Cv0d =  2*compute_boundary_1(W,N,d,a)
 
 
-        C0 = d0*( Cv0 + (2*d+1/a+1)*d0*Cv0 + (2*d+1/a+1)*d0*Cv02 )
-        C1 = 1/(4*λ2^2*a*b)*( Cv0 + (2*d+1/a+1)*d0*Cv0 + (2*d+1/a+1)*d0*Cv02 )
-        C2 = d1*( Cv0 + (2*d+1/a+1)*d0*Cv0 + (2*d+1/a+1)*d0*Cv02 )
-        C3 = d1*( Cv0*max1 + Cv0d + (2*d+1/a+1)/(4*λ2*a*b)*Cv0 + (2*d+1/a+1)*Cv02/(4*λ2*a*b) )
+    C0 = d0*( Cv0 + (2*d+1/a+1)*d0*Cv0 + (2*d+1/a+1)*d0*Cv02 )
+    C1 = 1/(4*λ2^2*a*b)*( Cv0 + (2*d+1/a+1)*d0*Cv0 + (2*d+1/a+1)*d0*Cv02 )
+    C2 = d1*( Cv0 + (2*d+1/a+1)*d0*Cv0 + (2*d+1/a+1)*d0*Cv02 )
+    C3 = d1*( Cv0*max1 + Cv0d + (2*d+1/a+1)/(4*λ2*a*b)*Cv0 + (2*d+1/a+1)*Cv02/(4*λ2*a*b) )
 
     # Computation of bᴺ0, bᴺ1 and bᴺ2
 
@@ -238,12 +238,12 @@ function compute_boundary_eig(V,N,d,a,b,λ2,λ1,max1)
     end
 
 
-        b0 = 1/d*( b0ᴺ + d^2/(π^2*N) )^(1/2)
-        b1 = 1/d*( b1ᴺ + 2*d^2/(3*π^4*N^3) )^(1/2)
-        b2 = 1/d*( b2ᴺ +  d^6/(5*π^6*N^5))^(1/2)
-        b3 = λ2/d*( 1/2 + 3*π*d/(4*sqrt(interval(2))*λ2^(1/4)) )^(1/2)
+    b0 = 1/d*( b0ᴺ + d^2/(π^2*N) )^(1/2)
+    b1 = 1/d*( b1ᴺ + 2*d^2/(3*π^4*N^3) )^(1/2)
+    b2 = 1/d*( b2ᴺ +  d^6/(5*π^6*N^5))^(1/2)
+    b3 = λ2/d*( 1/2 + 3*π*d/(4*sqrt(interval(2))*λ2^(1/4)) )^(1/2)
 
-        Z1 = 10/3*max(1,norm(V,1))*(b0*C0 + b1*C1 + b2*C2 + b3*C3)
+    Z1 = 10/3*max(1,norm(V,1))*(b0*C0 + b1*C1 + b2*C2 + b3*C3)
 
     return abs(Z1)
 end
