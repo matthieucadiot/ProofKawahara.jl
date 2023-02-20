@@ -29,9 +29,9 @@ The code will compute rigorously the needed bounds of Section 6 of #[1] and vali
 
 ## Proof of the first 3 eigencouples
 
-If the proof of the soliton is achieved, the code will then compute approximations for the first 3 eigencouples of the linearization around the proved soliton. Then, the needed bounds for the proof of eigencouples are computed, following the analysis of Section 6 of #[1]. In particular, the proof will be valid if T and c were chosen such that
- - $\frac{1}{3} < T < 0.397$ 
- - $c < 1- \frac{a(T)^2}{4b(T)}$.    
+If the proof of the soliton is achieved, the code will then compute approximations for the first 3 eigencouples of the linearization around the proved soliton. Then, the needed bounds for the proof of eigencouples are computed, following the analysis of Section 6 of #[1]. In particular, the proof will be valid if T was chosen such that
+ $\frac{1}{3} < T < 0.397$. 
+  
    
 
  If the computer-assisted proof succeeds, the radius for the smallest and biggest ball of contraction is displayed for each eigencouple.
