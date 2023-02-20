@@ -13,6 +13,7 @@ as it provides the necessary rigorous computations that are needed in Section 6.
 # The Kawahara equation
 
 The Kawahara equation
+$$\lambda_3u'''' + \lambda_2$$
 
  ![equation](http://latex.codecogs.com/gif.latex?%5Clambda_2u%27%27%27%27%20%2B%20%5Clambda_1u%27%27%20%2B%20u%20%2B%20%5Clambda_3u%5E2%20%3D%200)
  
