@@ -1,6 +1,21 @@
 # Computer-assisted proofs of solitons, eigencouples and orbital stability in the Kawahara equation.
 
 
+
+Table of contents:
+
+
+* [Introduction](#introduction)
+* [The Kawahara equation](#The Kawahara equation)
+ * [Proof of solitons](#Proof of solitons)
+	* [Proof of the first 3 eigencouples](#Proof of the first 3 eigencouples)
+	* [Proof of orbital stability](#Proof of orbital stability)
+* [Utilisation](#utilisation)
+* [References](#references)
+* [License](#license)
+
+
+
 # Introduction
 
 This Julia code is a complement to the article 
@@ -14,7 +29,7 @@ as it provides the necessary rigorous computations that are needed in Section 6.
 
 The Kawahara equation
 $$\lambda_2u'''' + \lambda_1u'' + u + \lambda_3u^2 = 0$$
-is known to have solutions on $\mathbb{R}$ that decay to zero at infinity. These solutions are called solitary waves or soliton (see [1]) for a complete description).
+is known to have solutions on $\mathbb{R}$ that decay to zero at infinity. These solutions are called solitary waves or soliton (see [1] for a complete description).
 
 ## Proof of solitons
 
@@ -42,3 +57,9 @@ If the proof of the soliton is achieved, the code will then compute approximatio
 If the proof of the first 3 eigencouples is achieved, the code will then try to prove Theorem 6.20 in [1]. In particular, we want to prove that the 3 eigenvalues obtained beforehead, are actually the first 3 ones. The algorithm is explained in the proof of Theorem 6.20 and uses Lemma 6.19. 
 
  If the computer-assisted proof of Theorem 6.20 succeeds, the value for  <img src="https://latex.codecogs.com/gif.latex?\tau" /> (Proposition 6.23) is computed rigorously. In particular, we check that <img src="https://latex.codecogs.com/gif.latex?\tau" /> is striclty negative, and if that is the case, then we obtain that the proved soliton is orbitally stable.
+ 
+ 
+ # Utilisation
+ 
+ # License
+  The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
