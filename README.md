@@ -5,7 +5,7 @@
 
 This Julia code is a complement to the article 
 
-[1][1] : "Rigorous computation of solutions of semi-linear PDEs on unbounded domains via spectral methods" (M. Cadiot, J-P. Lessard, J-C. Nave)
+[1] : "Rigorous computation of solutions of semi-linear PDEs on unbounded domains via spectral methods" (M. Cadiot, J-P. Lessard, J-C. Nave)
 
 as it provides the necessary rigorous computations that are needed in Section 6.
 
@@ -18,18 +18,18 @@ is known to have solutions on $\mathbb{R}$ that decay to zero at infinity. These
 
 ## Proof of solitons
 
-The present code provides the rigorous numerics for the proof of solitons of the Kawahara equation using the analysis of #[1] (specifically the Section 6). In the beginning of the main code (main_proof_Kawahara), the user can choose the values for N, d, T and c, that are described in #[1]. In particular, T and c need to be chosen such that
+The present code provides the rigorous numerics for the proof of solitons of the Kawahara equation using the analysis of [1] (specifically the Section 6). In the beginning of the main code (main_proof_Kawahara), the user can choose the values for N, d, T and c, that are described in [1]. In particular, T and c need to be chosen such that
  - $0 \leq T < 0.397$ 
  - $c < 1- \frac{a(T)^2}{4b(T)}$    
 where
 - $a(T) = \frac{1-3T}{6}$
 - $b(T) = \frac{19 - 30T - 45T^2}{360}$.   
 
-The code will compute rigorously the needed bounds of Section 6 of #[1] and validate of not the computer-assisted proof. If the computer-assisted proof succeeds, the radius for the smallest and biggest ball of contraction is displayed.
+The code will compute rigorously the needed bounds of Section 6 of [1] and validate of not the computer-assisted proof. If the computer-assisted proof succeeds, the radius for the smallest and biggest ball of contraction is displayed.
 
 ## Proof of the first 3 eigencouples
 
-If the proof of the soliton is achieved, the code will then compute approximations for the first 3 eigencouples of the linearization around the proved soliton. Then, the needed bounds for the proof of eigencouples are computed, following the analysis of Section 6 of #[1]. In particular, the proof will be valid if T was chosen such that
+If the proof of the soliton is achieved, the code will then compute approximations for the first 3 eigencouples of the linearization around the proved soliton. Then, the needed bounds for the proof of eigencouples are computed, following the analysis of Section 6 of [1]. In particular, the proof will be valid if T was chosen such that
  $\frac{1}{3} < T < 0.397$. 
   
    
