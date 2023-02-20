@@ -12,7 +12,7 @@ Table of contents:
    * [Proof of orbital stability](#Proof-of-orbital-stability)
 * [Utilisation](#utilisation)
 * [References](#references)
-* [License](#license)
+* [License and Citation](#license)
 
 
 
