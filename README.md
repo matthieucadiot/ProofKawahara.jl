@@ -6,10 +6,10 @@ Table of contents:
 
 
 * [Introduction](#introduction)
-* [The Kawahara equation](#The Kawahara equation)
- * [Proof of solitons](#Proof of solitons)
-	* [Proof of the first 3 eigencouples](#Proof of the first 3 eigencouples)
-	* [Proof of orbital stability](#Proof of orbital stability)
+* [The Kawahara equation](#kawahara)
+ * [Proof of solitons](#solitons)
+ * [Proof of the first 3 eigencouples](#eigencouples)
+ * [Proof of orbital stability](#stability)
 * [Utilisation](#utilisation)
 * [References](#references)
 * [License](#license)
