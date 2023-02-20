@@ -73,7 +73,7 @@ If the proof of the first 3 eigencouples is achieved, the code will then try to 
  
  # License and Citation
  
-  The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+  This code is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
   
 If you wish to use this code in your publication, research, teaching, or other activities, please cite it using the following BibTeX template:
 
