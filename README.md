@@ -29,7 +29,7 @@ as it provides the necessary rigorous computations that are needed in Section 6.
 
 The Kawahara equation
 $$\lambda_2u'''' + \lambda_1u'' + u + \lambda_3u^2 = 0$$
-is known to have solutions on $\mathbb{R}$ that decay to zero at infinity. These solutions are called solitary waves or soliton (see [1](#[1]) for a complete description).
+is known to have solutions on $\mathbb{R}$ that decay to zero at infinity. These solutions are called solitary waves or soliton (see [1] for a complete description).
 
 ## Proof of solitons
 
