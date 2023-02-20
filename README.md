@@ -22,7 +22,7 @@ This Julia code is a complement to the article
 
 #### [1] : "Rigorous computation of solutions of semi-linear PDEs on unbounded domains via spectral methods" (M. Cadiot, J-P. Lessard, J-C. Nave)
 
-as it provides the necessary rigorous computations that are needed in Section 6.
+as it provides the necessary rigorous computations that are needed in Section 6. The rigorous computations are performed using the package [IntervalArithmetic](https://github.com/JuliaIntervals/IntervalArithmetic.jl). The mathematical objects (spaces, sequences, operators,...) are built using the package [RadiiPolynomial](https://github.com/OlivierHnt/RadiiPolynomial.jl). 
 
 
 # The Kawahara equation
@@ -33,7 +33,7 @@ is known to have solutions on $\mathbb{R}$ that decay to zero at infinity. These
 
 ## Proof of solitons
 
-The present code provides the rigorous numerics for the proof of solitons of the Kawahara equation using the analysis of [1] (specifically the Section 6). In the beginning of the main code (main_proof_Kawahara), the user can choose the values for N, d, T and c, that are described in [1]. In particular, T and c need to be chosen such that
+The present code provides the rigorous numerics for the proof of solitons of the Kawahara equation using the analysis of [1] (specifically the Section 6). The user can choose, line 504 of the code, the values for N, d, T and c, that are described in [1]. In particular, T and c need to be chosen such that
  - $0 \leq T < 0.397$ 
  - $c < 1- \frac{a(T)^2}{4b(T)}$    
 where
@@ -59,7 +59,17 @@ If the proof of the first 3 eigencouples is achieved, the code will then try to 
  If the computer-assisted proof of Theorem 6.20 succeeds, the value for  <img src="https://latex.codecogs.com/gif.latex?\tau" /> (Proposition 6.23) is computed rigorously. In particular, we check that <img src="https://latex.codecogs.com/gif.latex?\tau" /> is striclty negative, and if that is the case, then we obtain that the proved soliton is orbitally stable.
  
  
- # Utilisation
+ # Utilisation and References
+ 
+ Go directly to line 504 of the code in order to enter the values for N, d, c and T. The values need to respect the requirements cited above. I would suggest to keep the by-default values of N and d. However, if the proof fails, you can try to increase the value of d and N. This can happen if you choose values of c and T that are close to singular values (bifurcation points) such as $c =1$ or $T = \frac{1}{3}$.
+ 
+ The code is build using the following packages :
+ - [RadiiPolynomial](https://github.com/OlivierHnt/RadiiPolynomial.jl) 
+ - [IntervalArithmetic](https://github.com/JuliaIntervals/IntervalArithmetic.jl)
+ - [LinearAlgebra](https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/)
+ - [FFTW](https://github.com/JuliaMath/FFTW.jl).
+ 
+ You will need to install these packages. After that, you should be able to run the code normally.
  
  # License and Citation
  
