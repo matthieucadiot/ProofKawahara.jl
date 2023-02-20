@@ -12,7 +12,7 @@ Table of contents:
    * [Proof of orbital stability](#Proof-of-orbital-stability)
 * [Utilisation](#utilisation)
 * [References](#references)
-* [License and Citation](#license)
+* [License and Citation](#license-and-citation)
 
 
 
@@ -61,5 +61,6 @@ If the proof of the first 3 eigencouples is achieved, the code will then try to 
  
  # Utilisation
  
- # License
+ # License and Citation
+ 
   The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
