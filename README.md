@@ -10,8 +10,7 @@ Table of contents:
    * [Proof of solitons](#Proof-of-solitons)
    * [Proof of the first 3 eigencouples](#Proof-of-the-first-3-eigencouples)
    * [Proof of orbital stability](#Proof-of-orbital-stability)
-* [Utilisation](#utilisation)
-* [References](#references)
+* [Utilisation and References](#utilisation-and-references)
 * [License and Citation](#license-and-citation)
 
 
