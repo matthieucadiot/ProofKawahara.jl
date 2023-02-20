@@ -80,17 +80,17 @@ end
 
 function trace(N,d,id)
     if id==0
-        w = interval.((0:N));
-        Y = (interval((pi))^2/interval((d))^2)*w.^2;
-        X = interval.(((2*(-1).^(0:N)))); X[1] = interval((1));
+        w = interval.((0:N))
+        Y = (interval((pi))^2/interval((d))^2)*w.^2
+        X = interval.(((2*(-1).^(0:N)))); X[1] = interval((1))
 
         f = [X';
             (X.*Y)']
         return f
     else
-        w = interval.(big.(0:N));
-        Y = (interval(big(pi))^2/interval(big(d))^2)*w.^2;
-        X = interval.(big.((2*(-1).^(0:N)))); X[1] = interval(big(1));
+        w = interval.(big.(0:N))
+        Y = (interval(big(pi))^2/interval(big(d))^2)*w.^2
+        X = interval.(big.((2*(-1).^(0:N)))); X[1] = interval(big(1))
 
         f = [X';
             (X.*Y)']
@@ -100,13 +100,13 @@ end
 
 
 function trace_full(N,d)
-    w = -N:N;
+    w = -N:N
     p = interval(pi)
     d = interval(d)
     Y2 = (p/d)*interval.(w);
-    Y1 = (p^2/d^2)*interval.(w).^2;
-    Y3 = (p^3/d^3)*interval.(w).^3;
-    X = interval.((-1).^w);
+    Y1 = (p^2/d^2)*interval.(w).^2
+    Y3 = (p^3/d^3)*interval.(w).^3
+    X = interval.((-1).^w)
 
     f = [X';
         (X.*Y1)';
@@ -122,29 +122,29 @@ function compute_boundary(V,N,d,a)
     for n = 1:N
     
         for m = 1:N
-               b = 4*a*(1/(((π)/d*(n-m))^2+4*a^2) + 1/((π/d*(n+m))^2+4*a^2));
-               u= V[n];
-               v= V[m];
-               S = S+ ((-1)^(n-m))*u*v*b;
+               b = 4*a*(1/(((π)/d*(n-m))^2+4*a^2) + 1/((π/d*(n+m))^2+4*a^2))
+               u= V[n]
+               v= V[m]
+               S = S+ ((-1)^(n-m))*u*v*b
          end
-               b = 4*a/((π/d*(n))^2+4*a^2) ;
-               u= V[n];
-               v= V[0];
-               S = S+(((-1)^(n)))*u*v*b;
+               b = 4*a/((π/d*(n))^2+4*a^2) 
+               u= V[n]
+               v= V[0]
+               S = S+(((-1)^(n)))*u*v*b
     end
 
     for m = 1:N
-           b = 4*a/((π/d*(m))^2+4*a^2)  ;
-           u= V[0];
-           v= V[m];
-           S = S+ (((-1)^(m)))*u*v*b;
+           b = 4*a/((π/d*(m))^2+4*a^2)  
+           u= V[0]
+           v= V[m]
+           S = S+ (((-1)^(m)))*u*v*b
     end
-    b =  1/(2*a) ;
-    u= V[0];
-    v= V[0];
-    S = S+ u*v*b;
+    b =  1/(2*a) 
+    u= V[0]
+    v= V[0]
+    S = S+ u*v*b
 
-    f = (sqrt(abs(S)));
+    f = sqrt(abs(S))
 end
 
 
@@ -156,15 +156,15 @@ function compute_boundary_1(V,N,d,a)
 
     for n = 1:N
         for m = 1:N
-               b = 4*a*(1/((π/d*(n-m))^2+4*a^2) - 1/((π/d*(n+m))^2+4*a^2)) ;
-               u= (n)*π/d*V[n];
-               v= (m)*π/d*V[m];
-               S = S+ (((-1)^(n-m)))*u*v*b;
+               b = 4*a*(1/((π/d*(n-m))^2+4*a^2) - 1/((π/d*(n+m))^2+4*a^2)) 
+               u= (n)*π/d*V[n]
+               v= (m)*π/d*V[m]
+               S = S+ (((-1)^(n-m)))*u*v*b
         end
 
     end
 
-    f = (sqrt(abs(S)));
+    f = sqrt(abs(S))
 end
 
 
@@ -262,7 +262,7 @@ function proof_eigen_kawahara(U,U0,λ1,λ2,λ3,N,d,rmin)
     D⁴ = project(Derivative(4), fourier, fourier,Complex{Interval{Float64}})
     L = 1/(1-ν)*interval.(real.((I + λ1*D² +λ2*D⁴)))
     Lᵢ = diagm(ones(2*N+1)./diag(coefficients(L)))
-    S = trace_full(N,d); Sᵀ = S' ;
+    S = trace_full(N,d); Sᵀ = S' 
 
     V = V - Sequence(fourier,Lᵢ*Sᵀ*inv(S*Lᵢ*Sᵀ)*S*coefficients(V))
 
@@ -295,7 +295,7 @@ function proof_eigen_kawahara(U,U0,λ1,λ2,λ3,N,d,rmin)
     Z1 = Interval.(Float64.(inf.(Z1),RoundDown),Float64.(sup.(Z1),RoundUp) )
     
 
-    Lν = L - ν/(1-ν)*I;
+    Lν = L - ν/(1-ν)*I
 
      # We make sure that ||V||ₗ ≤ 1 in order to have ||v||ₗ ≤ 1
     V = inf(1/norm(Lν*V,2))*V
@@ -349,8 +349,8 @@ function proof_eigen_kawahara(U,U0,λ1,λ2,λ3,N,d,rmin)
 x = 1;
 if 1- Z>0
     if 1-sup(4*Y*Z2) > 0
-      rmin = Float64.(sup.((1 - sqrt(1-4*Y*Z2))/(2*Z2)),RoundUp);
-      rmax = Float64.(inf.((1 + sqrt(1-4*Y*Z2))/(2*Z2)),RoundDown);
+      rmin = Float64.(sup.((1 - sqrt(1-4*Y*Z2))/(2*Z2)),RoundUp)
+      rmax = Float64.(inf.((1 + sqrt(1-4*Y*Z2))/(2*Z2)),RoundDown)
       if rmin<rmax
         display("The computer-assisted proof was successful for the eigenvalue ν with value")
         display(Float64.(mid(ν)))
@@ -414,7 +414,7 @@ function no_eigen_outside(r1,r2,r3,U1,U2,U3,U0,λ1,λ2,λ3,N,Z1)
 
         Df = Lν + 1/(1-ν)*Q
         A = inv(mid.(Df))
-        norm_A = maximum([1 opnorm(LinearOperator(coefficients(Lν*A)),2)]);       # Computation for an upper bound of the norm of A
+        norm_A = maximum([1 opnorm(LinearOperator(coefficients(Lν*A)),2)])       # Computation for an upper bound of the norm of A
 
         Z = opnorm(Lν*(I  - A*Df)*Li,2)+   1/(1-ν)*abs((1+norm_A)*(n0)/coefficients(Lν)[2*N+1,2*N+1]) + nQ
         if sup(Z) >= 1
@@ -443,7 +443,7 @@ function no_eigen_outside(r1,r2,r3,U1,U2,U3,U0,λ1,λ2,λ3,N,Z1)
 
         Df = Lν + 1/(1-ν)*Q
         A = inv(mid.(Df))
-        norm_A = maximum([1 opnorm(LinearOperator(coefficients(Lν*A)),2)]);       # Computation for an upper bound of the norm of A
+        norm_A = maximum([1 opnorm(LinearOperator(coefficients(Lν*A)),2)])       # Computation for an upper bound of the norm of A
 
         Z = opnorm(Lν*(I  - A*Df)*Li,2)+   1/(1-ν)*abs((1+norm_A)*(n0)/coefficients(Lν)[2*N+1,2*N+1]) + nQ
         if sup(Z) >= 1
@@ -472,7 +472,7 @@ function no_eigen_outside(r1,r2,r3,U1,U2,U3,U0,λ1,λ2,λ3,N,Z1)
 
         Df = Lν + 1/(1-ν)*Q
         A = inv(mid.(Df))
-        norm_A = maximum([1 opnorm(LinearOperator(coefficients(Lν*A)),2)]);       # Computation for an upper bound of the norm of A
+        norm_A = maximum([1 opnorm(LinearOperator(coefficients(Lν*A)),2)])      # Computation for an upper bound of the norm of A
 
         Z = opnorm(Lν*(I  - A*Df)*Li,2)+   1/(1-ν)*abs((1+norm_A)*(n0)/coefficients(Lν)[2*N+1,2*N+1]) + nQ
         if sup(Z) >= 1
@@ -522,8 +522,8 @@ U0 = interval.(U0)
 #################################################   Projection on X⁴₀   ##################################################################################
 # Projection of U0 in X⁴₀ : U0 needs to represent a function in H⁴₀(Ω)
 # We define S as the trace operator (SU = 0 means that U ∈ X⁴₀) and Sᵀ as its adjoint
-S = trace(N,d,0); Sᵀ = S' ;
-S_big = trace(N,d,1); Sᵀ_big = S_big' ;
+S = trace(N,d,0); Sᵀ = S' 
+S_big = trace(N,d,1); Sᵀ_big = S_big' 
 
 # We build the operator L and its inverse Lᵢ. The use of  matrix Lᵢ is described in Theorem 5.1 and Remark 5.2  
 D² = project(Derivative(2), fourier, fourier,Interval{Float64})
@@ -578,7 +578,7 @@ DF = L + Q        # Jacobien of F at U0
 
 # Then we construct the operator A and compute its norm
 A = interval.(inv(mid.(DF))) ;     # A is an approximated inverse for DF(U0)
-norm_A = maximum([1 opnorm(LinearOperator(coefficients(D*L*A*Di)),2)]);       # Computation for an upper bound of the norm of A
+norm_A = maximum([1 opnorm(LinearOperator(coefficients(D*L*A*Di)),2)])       # Computation for an upper bound of the norm of A
 
 Q_full = project(Multiplication(2*λ3*U0),fourier, CosFourier(2*N, π/d),Interval{Float64}) 
 # Computation of Z defined in Lemma ...
@@ -613,8 +613,8 @@ Z2 = C*Cr
 # we display the smallest and the largest radius for which we obtain a contraction in Hˡ
 if 1- Z>0
   if 1-sup(4*Y*Z2) > 0
-    rmin=sup((1 - sqrt(1-4*Y*Z2))/(2*Z2));
-    rmax=inf((1 + sqrt(1-4*Y*Z2))/(2*Z2));
+    rmin=sup((1 - sqrt(1-4*Y*Z2))/(2*Z2))
+    rmax=inf((1 + sqrt(1-4*Y*Z2))/(2*Z2))
     if rmin<rmax
       display("The computer-assisted proof for the soliton and the periodic solution was successful !")
       #display("Value of the minimal radius for the contraction")
