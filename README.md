@@ -20,7 +20,7 @@ Table of contents:
 
 This Julia code is a complement to the article 
 
-#### [1](https://arxiv.org/abs/2302.12877) : "Rigorous computation of solutions of semi-linear PDEs on unbounded domains via spectral methods", M. Cadiot, J-P. Lessard and J-C. Nave, [ArXiv Link](https://arxiv.org/abs/2302.12877)
+#### [[1]](https://arxiv.org/abs/2302.12877) : "Rigorous computation of solutions of semi-linear PDEs on unbounded domains via spectral methods", M. Cadiot, J-P. Lessard and J-C. Nave, [ArXiv Link](https://arxiv.org/abs/2302.12877)
 
 as it provides the necessary rigorous computations that are needed in Section 6. The rigorous computations are performed using the package [IntervalArithmetic](https://github.com/JuliaIntervals/IntervalArithmetic.jl). The mathematical objects (spaces, sequences, operators,...) are built using the package [RadiiPolynomial](https://github.com/OlivierHnt/RadiiPolynomial.jl). 
 
