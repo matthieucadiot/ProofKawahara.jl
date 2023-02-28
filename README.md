@@ -12,6 +12,7 @@ Table of contents:
    * [Proof of orbital stability](#Proof-of-orbital-stability)
 * [Utilisation and References](#utilisation-and-references)
 * [License and Citation](#license-and-citation)
+* [Contact](#contact)
 
 
 
@@ -19,7 +20,7 @@ Table of contents:
 
 This Julia code is a complement to the article 
 
-#### [1] : "Rigorous computation of solutions of semi-linear PDEs on unbounded domains via spectral methods" (M. Cadiot, J-P. Lessard, J-C. Nave)
+#### [1](https://arxiv.org/abs/2302.12877) : "Rigorous computation of solutions of semi-linear PDEs on unbounded domains via spectral methods" (M. Cadiot, J-P. Lessard, J-C. Nave)
 
 as it provides the necessary rigorous computations that are needed in Section 6. The rigorous computations are performed using the package [IntervalArithmetic](https://github.com/JuliaIntervals/IntervalArithmetic.jl). The mathematical objects (spaces, sequences, operators,...) are built using the package [RadiiPolynomial](https://github.com/OlivierHnt/RadiiPolynomial.jl). 
 
@@ -88,3 +89,10 @@ If you wish to use this code in your publication, research, teaching, or other a
 }
 ```
 DOI : [10.5281/zenodo.7656856](https://zenodo.org/record/7656856#.Y_NqJ0NKhPZ) 
+
+
+# Contact
+
+You can contact me at :
+
+matthieu.cadiot@mail.mcgill.ca
