@@ -33,7 +33,7 @@ is known to have solutions on $\mathbb{R}$ that decay to zero at infinity. These
 
 ## Proof of solitons
 
-The present code provides the rigorous numerics for the proof of solitons of the Kawahara equation using the analysis of [[1]](https://arxiv.org/abs/2302.12877) (specifically the Section 6). The user can choose, line 504 of the code, the values for N, d, T and c, that are described in [[1]](https://arxiv.org/abs/2302.12877). In particular, T and c need to be chosen such that
+The present code provides the rigorous numerics for the proof of solitons of the Kawahara equation using the analysis of [[1]](https://arxiv.org/abs/2302.12877) (specifically the Section 6). The user can choose, line 355 of the code, the values for N, d, T and c, that are described in [[1]](https://arxiv.org/abs/2302.12877). In particular, T and c need to be chosen such that
  - $0 \leq T < 0.397$ 
  - $c < 1- \frac{a(T)^2}{4b(T)}$    
 where
@@ -54,14 +54,14 @@ If the proof of the soliton is achieved, the code will then compute approximatio
  
  ## Proof of orbital stability
 
-If the proof of the first 3 eigencouples is achieved, the code will then try to prove Theorem 6.20 in [[1]](https://arxiv.org/abs/2302.12877). In particular, we want to prove that the 3 eigenvalues obtained beforehead, are actually the first 3 ones. The algorithm is explained in the proof of Theorem 6.20 and uses Lemma 6.19. 
+If the proof of the first 3 eigencouples is achieved, the code will then try to prove Theorem 6.15 in [[1]](https://arxiv.org/abs/2302.12877). In particular, we want to prove that the 3 eigenvalues obtained beforehead, are actually the first 3 ones. The algorithm is explained in the proof of Theorem 6.15 and uses Proposition 6.14. 
 
- If the computer-assisted proof of Theorem 6.20 succeeds, the value for  <img src="https://latex.codecogs.com/gif.latex?\tau" /> (Proposition 6.23) is computed rigorously. In particular, we check that <img src="https://latex.codecogs.com/gif.latex?\tau" /> is striclty negative, and if that is the case, then we obtain that the proved soliton is orbitally stable.
+ If the computer-assisted proof of Theorem 6.15 succeeds, the value for  <img src="https://latex.codecogs.com/gif.latex?\tau" /> (Proposition 6.14) is computed rigorously. In particular, we check that <img src="https://latex.codecogs.com/gif.latex?\tau" /> is striclty negative, and if that is the case, then we obtain that the proved soliton is orbitally stable.
  
  
  # Utilisation and References
  
- Go directly to line 504 of the code in order to enter the values for N, d, c and T. The values need to respect the requirements cited above. I would suggest to keep the by-default values of N and d. However, if the proof fails, you can try to increase the value of d and N. This can happen if you choose values of c and T that are close to singular values (bifurcation points) such as $c =1$ or $T = \frac{1}{3}$.
+ Go directly to line 355 of the code in order to enter the values for N, d, c and T. The values need to respect the requirements cited above. I would suggest to keep the by-default values of N and d. However, if the proof fails, you can try to increase the value of d and N. This can happen if you choose values of c and T that are close to singular values (bifurcation points) such as $c =1$ or $T = \frac{1}{3}$.
  
  The code is build using the following packages :
  - [RadiiPolynomial](https://github.com/OlivierHnt/RadiiPolynomial.jl) 
