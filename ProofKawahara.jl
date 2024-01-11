@@ -479,7 +479,8 @@ Z2 = norm_A*Cr
 #
 # # # ############### Verification ###################################################
 # In this section we verify that the hypotheses of the radii-polynomial approach are satisfied. If it is the case 
-# we display the smallest and the largest radius for which we obtain a contraction in Hˡ
+# we display the smallest and the largest radius for which we obtain a contraction in Hˡ. Here we check that 
+# Z2r^2 - (1-Z1)r + Y0 <0, which satisfies both   1/2*Z2r^2 - (1-Z1)r + Y0 <0 and Z2r + Z1 < 1.
 if 1- Z>0
   if 1-sup(4*Y0*Z2) > 0
     rmin=sup((1-Z - sqrt((1-Z)^2-4*Y0*Z2))/(2*Z2))
