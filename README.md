@@ -1,3 +1,7 @@
+# ProofKawahara.jl
+
+Julia code for computer-assisted proofs in the Kawahara equation : proofs of solitons and their orbital stability.
+
 # Computer-assisted proofs of solitons, eigencouples and orbital stability in the Kawahara equation.
 
 
